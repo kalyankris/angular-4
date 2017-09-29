@@ -1,3 +1,4 @@
+import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
   user: {id: number, name: string};
 
-  constructor() { }
+  constructor(private aroute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.user = {
+      id:this.aroute.snapshot.params['id'],
+      name:this.aroute.snapshot.params['name']
+
+    };
+this.aroute.params.subscribe(
+  (params:Params) =>  {
+    this.user.id = params['id'];
+    this.user.name= params['name'];
+  }
+);
   }
 
 }
