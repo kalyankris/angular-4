@@ -1,0 +1,33 @@
+<!-- <div class="container">
+<app-cockpit 
+(serverCreated)="onServerAdded($event)"
+(blueprintCreated)="onBlueprintAdded($event)"
+
+><p>in conetnt khdkhkdhakhdk</p></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()"> change first</button>
+        <app-server-element 
+        *ngFor="let serverEle of serverElements"
+        [srvElement]="serverEle"
+        [name] ="serverEle.name"
+        >
+      <p #ngContentapp>usng ng content</p>
+      </app-server-element>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <app-game-control (intervalFired)="onIntervalFiredElemet($event)"></app-game-control>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <app-odd  *ngFor="  let oddnumbers of oddnumbers" [number]="oddnumbers"></app-odd>
+  </div>
+</div>
