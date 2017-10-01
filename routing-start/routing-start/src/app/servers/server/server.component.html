@@ -1,5 +1,3 @@
 <h5>{{ server.name }}</h5>
 <p>Server status is {{ server.status }}</p>
-<a routerLink="/users">hisssss</a>
-<button class="btn btn-primary" (click)="reloadPage()">in server</button>
-<app-edit-server>  </app-edit-server>   
+<button (click)="onEdit()">Edit server</button>
