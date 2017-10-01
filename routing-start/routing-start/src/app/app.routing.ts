@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './servers/edit-server/deactivate.guard';
 import { AuthGuard } from './app.guard.service';
 import { UserComponent } from './users/user/user.component';
 import { ServersComponent } from './servers/servers.component';
@@ -8,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { ServerComponent } from './servers/server/server.component';
 import { NgModule } from '@angular/core';
+
 
 
 
@@ -23,7 +25,7 @@ const appRoutes:  Routes = [
     children:[
       {  path:':id',
       component : ServerComponent },
-      {  path:':id/edit' ,component : EditServerComponent }
+      {  path:':id/edit' ,component : EditServerComponent,canDeactivate:[CanDeactivateGuard] }
     ] },
     {  path:'something' ,component : ErrorpageComponent },
     {  path:'**' ,redirectTo:'/something' }

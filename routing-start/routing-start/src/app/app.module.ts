@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './servers/edit-server/deactivate.guard';
 
 import { AppRoutingModule } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -35,7 +36,7 @@ import { AuthService } from './auth.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService,AuthService,AuthGuard],
+  providers: [ServersService,AuthService,AuthGuard,CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
