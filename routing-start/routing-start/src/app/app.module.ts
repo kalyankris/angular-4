@@ -1,3 +1,4 @@
+
 import { AppRoutingModule } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,7 +14,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
-
+import { AuthGuard } from './app.guard.service';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
