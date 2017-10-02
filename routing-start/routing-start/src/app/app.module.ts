@@ -17,6 +17,8 @@ import { ServersService } from './servers/servers.service';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { AuthGuard } from './app.guard.service';
 import { AuthService } from './auth.service';
+import { NewErrorPageComponent } from './new-error-page/new-error-page.component';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { AuthService } from './auth.service';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    NewErrorPageComponent
   ],
   imports: [
     BrowserModule,
