@@ -1,3 +1,4 @@
+import { ServerResolver } from './servers/server/server.resolver';
 import { CanDeactivateGuard } from './servers/edit-server/deactivate.guard';
 
 import { AppRoutingModule } from './app.routing';
@@ -39,7 +40,7 @@ import { NewErrorPageComponent } from './new-error-page/new-error-page.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService,AuthService,AuthGuard,CanDeactivateGuard],
+  providers: [ServersService,AuthService,AuthGuard,CanDeactivateGuard,ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
