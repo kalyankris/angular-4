@@ -47,6 +47,7 @@ export class AppComponent {
     this.user.secretoption = this.singup.value.secretoption;
     this.user.answer = this.singup.value.questionAnswer;
     this.user.gender = this.singup.value.gender;
+    this.singup.reset();
   }
   
 }
