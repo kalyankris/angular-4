@@ -54,4 +54,8 @@ export class ShoppingEditComponent implements OnInit , OnDestroy{
     this.subscription.unsubscribe();
   }
 
+  clear(){
+    this.slform.reset();
+    this.editmode = false;
+  }
 }
