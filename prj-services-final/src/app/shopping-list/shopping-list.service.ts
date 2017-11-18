@@ -1,3 +1,4 @@
+
 import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs/Subject';
 
@@ -27,6 +28,11 @@ export class ShoppingListService {
     //   this.addIngredient(ingredient);
     // }
     this.ingredients.push(...ingredients);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index:number,newIngredient:Ingredient){
+    this.ingredients[index] =newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
