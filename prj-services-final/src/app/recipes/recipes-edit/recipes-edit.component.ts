@@ -1,3 +1,4 @@
+import { Recipe } from './../recipe.model';
 import { RecipeService } from './../recipe.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -58,8 +59,17 @@ recipeForm : FormGroup;
   }
 
   onSubmit(){
-    console.log(this.recipeForm);
-    
+      // const newRecipe = new Recipe(
+      //   this.recipeForm.value['name'],
+      //   this.recipeForm.value['description'],
+      //   this.recipeForm.value['imagepath'],
+      //   this.recipeForm.value['ingredients']
+      // );
+      if(this.editmode){
+      this.recipeService.updateRecipe(this.id,this.recipeForm.value);
+    } else {
+      this.recipeService.addRecipe(this.recipeForm.value);
+    }
   }
 
   onAddIngredient(){
