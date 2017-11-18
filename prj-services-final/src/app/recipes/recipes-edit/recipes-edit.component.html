@@ -3,7 +3,7 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" >
       <div class="col-xs-12">
         <button type="submit" class="btn btn-success" [disabled]="!recipeForm.valid">Save</button>
-        <button type="submit" class="btn btn-danger">Cancel</button>
+        <button type="submit" class="btn btn-danger" (click)="onCancel()">Cancel</button>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -25,7 +25,7 @@
               <input 
                type="text"
                id="imagepath"
-               formControlName="imagepath"
+               formControlName="imagePath"
                class="form-control"
                >
             </div>
