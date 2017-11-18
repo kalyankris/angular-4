@@ -90,4 +90,9 @@ recipeForm : FormGroup;
    );
   }
 
+  onDeleteIngredient(index:number){
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+
+}
+
 }
