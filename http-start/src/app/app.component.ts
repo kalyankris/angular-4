@@ -42,7 +42,7 @@ export class AppComponent {
 
   onGet(){
     this.serverService.getServers().subscribe(
-      (serversData:any[]) => console.log(serversData),
+      (serversData:any[]) => this.servers = serversData,
       (error) => console.log(error)      
     );
   }
