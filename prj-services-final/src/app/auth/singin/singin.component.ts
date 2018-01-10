@@ -1,3 +1,5 @@
+import { AuthSerice } from './../auth.service';
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SinginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authSerice:AuthSerice) { }
 
   ngOnInit() {
+  }
+
+  onSignin(form:NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authSerice.signinUser(email,password);
   }
 
 }
