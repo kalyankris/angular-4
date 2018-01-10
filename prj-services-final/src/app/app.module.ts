@@ -1,3 +1,4 @@
+import { DataStorageService } from './shared/data-storage.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -39,7 +40,7 @@ import { RecipeService } from 'app/recipes/recipe.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService,RecipeService],
+  providers: [ShoppingListService,RecipeService,DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
