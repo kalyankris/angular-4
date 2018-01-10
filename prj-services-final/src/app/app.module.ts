@@ -1,3 +1,4 @@
+import { AuthSerice } from './auth/auth.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -44,7 +45,7 @@ import { SinginComponent } from './auth/singin/singin.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService,RecipeService,DataStorageService],
+  providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
