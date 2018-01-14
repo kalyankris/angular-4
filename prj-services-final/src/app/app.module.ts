@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth-guard.service';
 import { AuthSerice } from './auth/auth.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +46,7 @@ import { SinginComponent } from './auth/singin/singin.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice],
+  providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

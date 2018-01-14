@@ -1,8 +1,15 @@
 import * as firebase from 'firebase';
-
+import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+@Injectable()
 export class AuthSerice {
   token: string;
   loggedIn = false;
+
+  constructor(private router: Router){
+
+  }
+
   signupUser(email: string, password: string) {
   firebase.auth().createUserWithEmailAndPassword(email,password)
   .catch(
@@ -14,6 +21,7 @@ export class AuthSerice {
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(
       response => {
+        this.router.navigate(['/']);
         firebase.auth().currentUser.getToken()
         .then(
           (token: string) => this.token = token
