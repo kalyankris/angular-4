@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 
 export class AuthSerice {
   token: string;
-
+  loggedIn = false;
   signupUser(email: string, password: string) {
   firebase.auth().createUserWithEmailAndPassword(email,password)
   .catch(
@@ -25,6 +25,12 @@ export class AuthSerice {
     );
   }
 
+  logout(){
+    firebase.auth().signOut();
+    this.token = null;
+    this.loggedIn = false;
+  }
+
   getToken() {
    firebase.auth().currentUser.getToken()
    .then(
@@ -33,7 +39,7 @@ export class AuthSerice {
   return this.token;
   }
 
-  isAuth() {
-    return this.token  != null;
-  }
+  // isAuth() {
+  //   return this.token  != null;
+  // }
 }

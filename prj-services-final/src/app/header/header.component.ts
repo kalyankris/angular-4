@@ -8,7 +8,7 @@ import { Response } from '@angular/http/src/static_response';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  constructor(private dataStorageService:DataStorageService, private authSerice: AuthSerice) {}
+  constructor(private dataStorageService:DataStorageService, public authSerice: AuthSerice) {}
 
   onSaveData(){
     this.dataStorageService.storeRecpies()
@@ -21,5 +21,9 @@ export class HeaderComponent {
 
   onFetchData() {
     this.dataStorageService.getRecipes();
+  }
+
+  onLogOut(){
+    this.authSerice.logout();
   }
 }
