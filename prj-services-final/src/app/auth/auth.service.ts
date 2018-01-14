@@ -32,4 +32,8 @@ export class AuthSerice {
   );
   return this.token;
   }
+
+  isAuth() {
+    return this.token  != null;
+  }
 }

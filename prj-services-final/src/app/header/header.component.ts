@@ -1,3 +1,4 @@
+import { AuthSerice } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { Component } from '@angular/core';
 import { Response } from '@angular/http/src/static_response';
@@ -7,13 +8,13 @@ import { Response } from '@angular/http/src/static_response';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  constructor(private dataStorageService:DataStorageService) {}
+  constructor(private dataStorageService:DataStorageService, private authSerice: AuthSerice) {}
 
   onSaveData(){
     this.dataStorageService.storeRecpies()
     .subscribe(
       (response: Response) => {
-        console.log(response);       
+        console.log(response);
       }
     );
   }
