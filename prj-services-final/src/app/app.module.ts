@@ -12,17 +12,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from 'app/recipes/recipe.service';
-import { SingupComponent } from './auth/singup/singup.component';
-import { SinginComponent } from './auth/singin/singin.component';
 import { RecipeModule } from 'app/recipes/recipe.module';
 import { ShoppingListModule } from 'app/shopping-list/shopping-list.module';
+import { AuthModule } from 'app/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SingupComponent,
-    SinginComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +27,8 @@ import { ShoppingListModule } from 'app/shopping-list/shopping-list.module';
     AppRoutingModule,
     RecipeModule,
     SharedModule,
-    ShoppingListModule
+    ShoppingListModule,
+    AuthModule
   ],
   providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice,AuthGuard],
   bootstrap: [AppComponent]
