@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthSerice {
   token: string;
-  loggedIn = false;
 
   constructor(private router: Router){
 
@@ -36,7 +35,6 @@ export class AuthSerice {
   logout(){
     firebase.auth().signOut();
     this.token = null;
-    this.loggedIn = false;
   }
 
   getToken() {
@@ -47,7 +45,7 @@ export class AuthSerice {
   return this.token;
   }
 
-  // isAuth() {
-  //   return this.token  != null;
-  // }
+  isAuth() {
+    return this.token  != null;
+  }
 }

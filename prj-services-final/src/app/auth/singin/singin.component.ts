@@ -18,7 +18,6 @@ export class SinginComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.authSerice.signinUser(email,password);
-    this.authSerice.loggedIn = true;
   }
 
 }

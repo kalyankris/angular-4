@@ -26,4 +26,8 @@ export class HeaderComponent {
   onLogOut(){
     this.authSerice.logout();
   }
+
+  isAuth() {
+    return this.authSerice.isAuth();
+  }
 }
