@@ -10,30 +10,27 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from 'app/recipes/recipe.service';
 import { SingupComponent } from './auth/singup/singup.component';
 import { SinginComponent } from './auth/singin/singin.component';
 import { RecipeModule } from 'app/recipes/recipe.module';
+import { ShoppingListModule } from 'app/shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     SingupComponent,
     SinginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     AppRoutingModule,
     RecipeModule,
-    SharedModule
+    SharedModule,
+    ShoppingListModule
   ],
   providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice,AuthGuard],
   bootstrap: [AppComponent]
