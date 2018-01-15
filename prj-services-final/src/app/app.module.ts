@@ -1,4 +1,4 @@
-import { DropdownDirective } from './shared/dropdown.directive';
+import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthSerice } from './auth/auth.service';
 import { DataStorageService } from './shared/data-storage.service';
@@ -25,15 +25,15 @@ import { RecipeModule } from 'app/recipes/recipe.module';
     ShoppingListComponent,
     ShoppingEditComponent,
     SingupComponent,
-    SinginComponent,
-    DropdownDirective
+    SinginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipeModule
+    RecipeModule,
+    SharedModule
   ],
   providers: [ShoppingListService,RecipeService,DataStorageService,AuthSerice,AuthGuard],
   bootstrap: [AppComponent]
