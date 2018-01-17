@@ -1,5 +1,5 @@
-import { AuthSerice } from './../auth/auth.service';
-import { DataStorageService } from './../shared/data-storage.service';
+import { AuthSerice } from './../../auth/auth.service';
+import { DataStorageService } from './../../shared/data-storage.service';
 import { Component } from '@angular/core';
 import { Response } from '@angular/http/src/static_response';
 
