@@ -12,20 +12,20 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from 'app/recipes/recipe.service';
-import { RecipeModule } from 'app/recipes/recipe.module';
 import { ShoppingListModule } from 'app/shopping-list/shopping-list.module';
 import { AuthModule } from 'app/auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    RecipeModule,
     SharedModule,
     ShoppingListModule,
     AuthModule
