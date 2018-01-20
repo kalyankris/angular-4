@@ -26,7 +26,7 @@ recipeForm : FormGroup;
       }
     );
   }
-  
+
   onCancel(){
     this.router.navigate(['../'],{relativeTo:this.route});
   }
@@ -38,7 +38,7 @@ recipeForm : FormGroup;
     let recipeIngredients = new FormArray([]);
 
     if(this.editmode){
-      const recipe = this.recipeService.getRecipe(this.id); 
+      const recipe = this.recipeService.getRecipe(this.id);
       recipeName = recipe.name;
       recipeImagePath = recipe.imagePath;
       description = recipe.description;
@@ -76,7 +76,7 @@ recipeForm : FormGroup;
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
       console.log(this.recipeForm);
-      
+
     }
     this.onCancel();
   }
@@ -93,6 +93,10 @@ recipeForm : FormGroup;
   onDeleteIngredient(index:number){
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
 
+}
+
+getControls() {
+  return (<FormArray>this.recipeForm.get('ingredients')).controls;
 }
 
 }
