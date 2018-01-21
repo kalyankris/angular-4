@@ -14,7 +14,6 @@ export class DataStorageService {
   }
 
   storeRecipes() {
-    const token = this.authService.getToken();
 
     // return this.httpClient.put('https://main-udemy.firebaseio.com/recipes.json', this.recipeService.getRecipes(), {
     //   observe: 'body',
@@ -22,17 +21,15 @@ export class DataStorageService {
     //   // headers: new HttpHeaders().set('Authorization', 'Bearer')
     // });
     const req = new HttpRequest('PUT', 'https://main-udemy.firebaseio.com/recipes.json',
-     this.recipeService.getRecipes(), {reportProgress: true, params: new HttpParams().set('auth', token)})
+     this.recipeService.getRecipes(), {reportProgress: true})
      return this.httpClient.request(req)
   }
 
   getRecipes() {
-    const token = this.authService.getToken();
 
     // this.httpClient.get<Recipe[]>('https://main-udemy.firebaseio.com/recipes.json?auth=' + token)
     this.httpClient.get<Recipe[]>('https://main-udemy.firebaseio.com/recipes.json?', {
       observe: 'body',
-      params: new HttpParams().set('auth', token),
       responseType: 'json'
     })
       .map(
